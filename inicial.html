@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Enigma</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="logica.js"></script>
+</head>
+<body>
+    <div id="enigma-container">
+        <div id="enigma-text">
+            <h1>O que é a Realidade?</h1>
+            <p>Quando o ponteiro chegar a zero, a realidade tremerá... O silêncio será quebrado...</p>
+            <div id="puzzle">
+                <p id="question">Em qual momento a queda é o fim ou o começo?</p>
+                <input type="text" id="answer" placeholder="Digite sua resposta...">
+                <button onclick="checkAnswer()">Submeter</button>
+            </div>
+        </div>
+        <div id="feedback"></div>
+        <div id="countdown">00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
