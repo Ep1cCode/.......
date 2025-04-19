@@ -73,3 +73,10 @@ button:hover {
     margin-top: 40px;
     color: #f44336;
 }
+
+#date {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff; /* Muda a cor do texto */
+    font-family: Arial, sans-serif;
+}
