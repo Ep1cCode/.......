@@ -1,5 +1,9 @@
-let countdown = 777600;  // Defina o tempo inicial (em segundos)
+let countdown = 777600;  // Tempo inicial (em segundos)
 let timer;
+
+// Cria o som da vitória
+const victorySound = new Audio('emi.mp3');
+victorySound.volume = 0.7; // Volume opcional
 
 function startCountdown() {
     timer = setInterval(function() {
@@ -28,22 +32,28 @@ function startCountdown() {
 
 function checkAnswer() {
     const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
-    const correctAnswer = "começo";  // Defina a resposta correta, de acordo com seu enigma
+    const correctAnswer = "começo"; // A resposta correta
 
     const feedback = document.getElementById("feedback");
 
     if (userAnswer === correctAnswer) {
         feedback.style.color = "#4CAF50";
         feedback.innerHTML = "A escolha correta. O mundo acabou ou o ciclo se reiniciou..?";
-        clearInterval(timer);  // Stop the countdown when the correct answer is given
-        document.getElementById("countdown").textContent = "00:00";  // Reset countdown
+        clearInterval(timer); // Para o contador
+        document.getElementById("countdown").textContent = "00:00"; // Reseta o contador
+
+        // Mostrar a data
+        document.getElementById("date").style.display = "block";
+
+        // Tocar som de vitória
+        victorySound.play();
     } else {
         feedback.style.color = "#f44336";
         feedback.innerHTML = "Resposta errada. O abismo aguarda mais uma tentativa.";
     }
 }
 
-// Inicia o temporizador assim que a página for carregada
+// Inicia o temporizador ao carregar a página
 window.onload = function() {
     startCountdown();
 };
